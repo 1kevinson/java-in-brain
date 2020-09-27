@@ -11,3 +11,4 @@ public class Variables {
     boolean b; //  Il ne peut contenir que deux valeurs: true ou false
     char c; // Aussi appelé caractère, char est un entier de 16 bits représentant un caractère codé en Unicode. Sa plage va de 0 à 65 535.
 }
+
