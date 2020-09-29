@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="java-inbrain" target="15" />
+      <module name="java-inbrain" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>
