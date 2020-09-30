@@ -40,10 +40,11 @@ public class CompareTripletsTest {
 
     @Test
     public void compare2TripletsTest() {
+        int[] expectedResult = {0,2};
         assertAll(
             () -> Arrays.stream(person1Numbers).forEach(el -> assertTrue(0 <= el || el <= 100)),
             () -> Arrays.stream(person2Numbers).forEach(el -> assertTrue(0 <= el || el <= 100)),
-            () -> assertEquals(new int[]{2, 4}, this.compareTriplets.getComparison(person1Numbers, person2Numbers))
+            () -> assertEquals(expectedResult, this.compareTriplets.getComparison(person1Numbers, person2Numbers))
         );
 
     }

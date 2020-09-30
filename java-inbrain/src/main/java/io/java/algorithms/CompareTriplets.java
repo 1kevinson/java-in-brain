@@ -1,19 +1,22 @@
 package io.java.algorithms;
 
+import java.util.Arrays;
+
 public class CompareTriplets {
 
-    public int[] getComparison(int[] array1, int[] array2) {
-        int ashleyPoints = 0;
+    public int[] getComparison(int[] arrayAlice, int[] arrayBob) {
+        int alicePoints = 0;
         int bobPoints = 0;
 
-        for (int i = 0; i < array1.length; i++) {
-            if (array1[i] >= array2[i]) {
-                ashleyPoints += 1;
-            } else {
-                bobPoints += 1;
+        for (int i = 0; i < arrayAlice.length; i++) {
+            if (arrayAlice[i] > arrayBob[i]) {
+                alicePoints++;
+            } else if(arrayAlice[i] < arrayBob[i]) {
+                bobPoints++;
             }
         }
-        System.out.println(ashleyPoints);
-        return new int[] {ashleyPoints,bobPoints};
+        int[] actualResult = {alicePoints,bobPoints};
+        System.out.println(Arrays.toString(actualResult));
+        return actualResult;
     }
 }
