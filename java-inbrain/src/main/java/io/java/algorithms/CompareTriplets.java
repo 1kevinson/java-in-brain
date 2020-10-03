@@ -12,6 +12,10 @@ public class CompareTriplets {
         int bPoints = 0;
 
         for (int i = 0; i < a.length; i++) {
+            if (a[i] < 0  || b[i] < 0|| a[i] > 100 || b[i] > 100) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+
             if (a[i] < b[i]) {
                 aPoints += 1;
             } else if (a[i] > b[i]) {
