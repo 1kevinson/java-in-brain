@@ -15,14 +15,14 @@ public class CompareTriplets {
             }
 
             if (a[i] < b[i]) {
-                aPoints += 1;
+                bPoints =+ 1;
             } else if (a[i] > b[i]) {
-                bPoints += 1;
+                aPoints =+ 1;
             }
         }
 
         Map<String, Integer> result = new HashMap<>();
-        result.put("Alica", aPoints);
+        result.put("Alicia", aPoints);
         result.put("Bob", bPoints);
 
         return result;
