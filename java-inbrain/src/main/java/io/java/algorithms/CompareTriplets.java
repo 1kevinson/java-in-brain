@@ -1,22 +1,32 @@
 package io.java.algorithms;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class CompareTriplets {
 
-    public int[] getComparison(int[] arrayAlice, int[] arrayBob) {
-        int alicePoints = 0;
-        int bobPoints = 0;
+    public Map<String, Integer> getComparison(int[] a, int[] b) {
+        a = new int[3];
+        b = new int[3];
+        int aPoints = 0;
+        int bPoints = 0;
 
-        for (int i = 0; i < arrayAlice.length; i++) {
-            if (arrayAlice[i] > arrayBob[i]) {
-                alicePoints++;
-            } else if(arrayAlice[i] < arrayBob[i]) {
-                bobPoints++;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] < 0  || b[i] < 0|| a[i] > 100 || b[i] > 100) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+
+            if (a[i] < b[i]) {
+                aPoints += 1;
+            } else if (a[i] > b[i]) {
+                bPoints += 1;
             }
         }
-        int[] actualResult = {alicePoints,bobPoints};
-        System.out.println(Arrays.toString(actualResult));
-        return actualResult;
+
+        Map<String, Integer> result = new HashMap<>();
+        result.put("Alica", aPoints);
+        result.put("Bob", bPoints);
+
+        return result;
     }
 }
