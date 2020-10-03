@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@DisplayNameGeneration(DisplayNameGenerator.Simple.class)
 public class SimpleArraySumTest {
 
     private final SimpleArraySum simpleArraySum = new SimpleArraySum();
