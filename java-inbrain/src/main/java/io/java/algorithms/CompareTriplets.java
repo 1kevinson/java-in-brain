@@ -24,7 +24,7 @@ public class CompareTriplets {
         Map<String, Integer> result = new HashMap<>();
         result.put("Alicia", aPoints);
         result.put("Bob", bPoints);
-
+        System.out.println(result);
         return result;
     }
 }

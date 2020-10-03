@@ -15,14 +15,18 @@ public class CompareTripletsTest {
     @Test
     @DisplayName("Check that comparison of two array is OK")
     void checkThatComparisonIsCorrect() {
+        //Arrange
         int[] a = {1,2,3};
         int[] b = {5,2,1};
 
+        //Act
         Map<String,Integer> expected = compareTriplets.getComparison(a,b);
-
         System.out.println(expected);
-        assertEquals((int) expected.get("Alicia"), 1);
-        assertEquals((int) expected.get("Bob"), 1);
+        System.out.println(compareTriplets.getComparison(a,b));
+
+        //Assert
+        assertEquals(compareTriplets.getComparison(a,b).get("Alica"), 1);
+        assertEquals(compareTriplets.getComparison(a,b).get("Bob"), 1);
     }
 
 }
