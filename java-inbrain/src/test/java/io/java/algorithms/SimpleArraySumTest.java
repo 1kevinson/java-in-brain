@@ -14,7 +14,7 @@ public class SimpleArraySumTest {
     @Test
     @DisplayName("Check sum of array parameters")
     public void getSumTest() {
-        assertEquals(24, simpleArraySum.getSum(new Integer[]{3, 6, 7, 8}));
-        assertEquals(162, simpleArraySum.getSum(new Integer[]{-3, 56, 37, 81,-9}));
+        assertEquals(24, simpleArraySum.getSum(new Integer[]{3, 6, 7}));
+        assertEquals(162, simpleArraySum.getSum(new Integer[]{-3, 56, 37}));
     }
 }
