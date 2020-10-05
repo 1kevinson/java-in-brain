@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class Application implements Cloneable {
+public class Application {
 
     public static void main(String... args) {
         //Map & Optional transform value of the optional with using class method on it
@@ -35,10 +35,15 @@ public class Application implements Cloneable {
 
         //Flatmap
         String[][] data = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
-        Arrays.stream(data)
-                .flatMap(Arrays::stream) //abcdef
-                .forEach(String::toUpperCase); //ABCDEF
+        List<String> dataMapped = Arrays.stream(data)
+                .flatMap(a -> Arrays.stream(a).map(String::toUpperCase)) // Map + flat ( stream List )
+                .collect(Collectors.toList()); // [a,b,c,d,e,f]
+        System.out.println(dataMapped);
 
+        List<String> result = Arrays.stream(data).flatMap(Arrays::stream).collect(Collectors.toList()); // [a,b,c,d,e,f]
+        System.out.println(result);
 
     }
+
+
 }
