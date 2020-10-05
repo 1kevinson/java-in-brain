@@ -3,23 +3,27 @@ package io.java.algorithms;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @DisplayName("Simple Array Test Cases")
 public class SimpleArraySumTest {
 
-    private final io.java.algorithms.SimpleArraySum simpleArraySum = new io.java.algorithms.SimpleArraySum();
+    private final SimpleArraySum simpleArraySum = new SimpleArraySum();
 
     @Test
-    @DisplayName("Check the array Length of the method argument")
+    @DisplayName("Check the array Length of the method arguments")
     void checkTheArrayLengthOfArgument() {
-        Exception exception = assertThrows(Exception.class, () -> simpleArraySum.getSum(new Integer[4]));
+        Integer[] arg = new Integer[4];
+        Arrays.setAll(arg, p -> p = 5);
+        Exception exception = assertThrows(Exception.class, () -> simpleArraySum.getSum(arg));
 
         String expectedMessage = "The array in arguments must be length = 3";
         String actualMessage = exception.getMessage();
 
-        assertEquals(expectedMessage, actualMessage,"The Exception message is wrong");
+        assertEquals(expectedMessage, actualMessage);
     }
 
     @Test
